@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="favicon" href="%PUBLIC_URL%/favicon.ico" />
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css" />-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tag above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favico.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React Dynamic Swiper</title>
+  </head>
+  <body>
+    <script>
+      // Polyfill for Array.prototype.fill from MDN
+      // @see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill
+      if (!Array.prototype.fill) {
+        Array.prototype.fill = function(value) {
+
+          // Steps 1-2.
+          if (this == null) {
+            throw new TypeError('this is null or not defined');
+          }
+
+          var O = Object(this);
+
+          // Steps 3-5.
+          var len = O.length >>> 0;
+
+          // Steps 6-7.
+          var start = arguments[1];
+          var relativeStart = start >> 0;
+
+          // Step 8.
+          var k = relativeStart < 0 ?
+            Math.max(len + relativeStart, 0) :
+            Math.min(relativeStart, len);
+
+          // Steps 9-10.
+          var end = arguments[2];
+          var relativeEnd = end === undefined ?
+            len : end >> 0;
+
+          // Step 11.
+          var final = relativeEnd < 0 ?
+            Math.max(len + relativeEnd, 0) :
+            Math.min(relativeEnd, len);
+
+          // Step 12.
+          while (k < final) {
+            O[k] = value;
+            k++;
+          }
+
+          // Step 13.
+          return O;
+        };
+      }
+    </script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start`.
+      To create a production bundle, use `npm run build`.
+    -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-87367622-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>
