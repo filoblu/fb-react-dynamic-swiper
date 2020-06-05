@@ -6,14 +6,7 @@ const { execSync } = require('child_process')
 
 const PROJECT_ROOT = path.normalize(path.join(__dirname, '..'))
 const SWIPER_CSS = path.normalize(
-  path.join(
-    PROJECT_ROOT,
-    'node_modules',
-    'swiper',
-    'dist',
-    'css',
-    'swiper.min.css'
-  )
+  path.join(PROJECT_ROOT, 'node_modules', 'swiper', 'dist', 'css', 'swiper.css')
 )
 
 if (!fs.existsSync(SWIPER_CSS)) {
